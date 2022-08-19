@@ -5,7 +5,7 @@ namespace MarsRover.Core.Models
     public class CsvInputRecord
     {
         [Index(0)]
-        public string Coordinates { private get; set; }
+        public string Coordinates { get; set; }
 
         [Index(1)]
         public string Steps { get; set; }

@@ -7,18 +7,42 @@ using System.Globalization;
 
 namespace MarsRover.Web.Controllers
 {
-    public class MarsRoverController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class MarsRoverCommandController : Controller
     {
         private readonly IMarsRoverService service;
 
-        public MarsRoverController(IMarsRoverService service)
+        public MarsRoverCommandController(IMarsRoverService service)
         {
             this.service = service;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
+        }
+
+
+        [HttpPost]
+        [Route("PreviewCsv")]
+        public IActionResult PreviewCsv(IFormFile file)
+        {
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                Delimiter = "|",
+                HasHeaderRecord = false
+            };
+
+            var records = new List<CsvInputRecord>();
+            using (var reader = new StreamReader(file.OpenReadStream()))
+            using (var csv = new CsvReader(reader, config))
+            {
+                records = csv.GetRecords<CsvInputRecord>().ToList();
+            }
+
+            return Json(records);
         }
 
         [HttpPost]
@@ -40,7 +64,7 @@ namespace MarsRover.Web.Controllers
 
             service.Run(records);
 
-            return PartialView();
+            return Json(service.FinalRoverCoordinates);
         }
     }
 }
