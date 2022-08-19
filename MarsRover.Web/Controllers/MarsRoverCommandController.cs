@@ -62,8 +62,14 @@ namespace MarsRover.Web.Controllers
                 records = csv.GetRecords<CsvInputRecord>().ToList();
             }
 
-            service.Run(records);
-
+            try
+            {
+                service.Run(records);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
             return Json(service.FinalRoverCoordinates);
         }
     }

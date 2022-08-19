@@ -33,8 +33,10 @@
 </div>
 <br />
 
-<div style="background-color: #BDEDFF; width: fit-content;">Start</div> 
-<div style="background-color: #9FE2BF; width: fit-content;">Finish</div>
+<div>
+    <div style="background-color: #BDEDFF; width: fit-content; display: inline-block;">Start</div> 
+    <div style="background-color: #9FE2BF; width: fit-content; display: inline-block;">Finish</div>
+</div>
 
 <div>Instructions: </div>
 <div id="instructions"></div>
@@ -154,11 +156,10 @@
                processData: false, 
                contentType: false, 
                success : function(data) {
-                   app.updateTableWithResult(data);
-                
+                   app.updateTableWithResult(data);                
                },
                error: function (result) {
-                   alert('Error');
+                   alert(result.responseText);
                }
             });
 

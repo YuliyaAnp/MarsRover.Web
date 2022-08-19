@@ -69,7 +69,7 @@ namespace MarsRover.Core
                 var coords = records[i].GetCoordinates();
                 if (OccupiedCoordinates.ContainsKey($"{coords.X} {coords.Y}"))
                 {
-                    throw new Exception("Invalid input");
+                    throw new Exception("Invalid input. Two or more rovers are trying to be deployed on the same cell.");
                 }
 
                 OccupiedCoordinates.Add($"{coords.X} {coords.Y}", i);
