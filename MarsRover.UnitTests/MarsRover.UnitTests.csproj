@@ -11,13 +11,13 @@
     <None Remove="Input\multipleRovers.csv" />
     <None Remove="Input\oneRover.csv" />
     <None Remove="Input\roverOutOfGrid.csv" />
-    <None Remove="Input\roversCross1.csv" />
-    <None Remove="Input\roversCross2.csv" />
+    <None Remove="Input\roversCross-firstCrossesSecond.csv" />
+    <None Remove="Input\roversCross-secondCrossesFirst.csv" />
     <None Remove="Output\multipleRovers.csv" />
     <None Remove="Output\oneRover.csv" />
     <None Remove="Output\roverOutOfGrid.csv" />
-    <None Remove="Output\roversCross1.csv" />
-    <None Remove="Output\roversCross2.csv" />
+    <None Remove="Output\roversCross-firstCrossesSecond.csv" />
+    <None Remove="Output\roversCross-secondCrossesFirst.csv" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,10 +27,10 @@
     <Content Include="Input\invalidInput.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Input\roversCross2.csv">
+    <Content Include="Input\roversCross-firstCrossesSecond.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Input\roversCross1.csv">
+    <Content Include="Input\roversCross-secondCrossesFirst.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Input\roverOutOfGrid.csv">
@@ -42,10 +42,10 @@
     <Content Include="Output\multipleRovers.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Output\roversCross2.csv">
+    <Content Include="Output\roversCross-firstCrossesSecond.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Output\roversCross1.csv">
+    <Content Include="Output\roversCross-secondCrossesFirst.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Output\roverOutOfGrid.csv">

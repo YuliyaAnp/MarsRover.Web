@@ -46,7 +46,7 @@ namespace MarsRover.Core
                     }
                     catch (Exception e)
                     {
-                        //logging
+                        // ToDo: logging e.Message
                         break;
                     }
                 }
@@ -69,7 +69,7 @@ namespace MarsRover.Core
                 var coords = records[i].GetCoordinates();
                 if (OccupiedCoordinates.ContainsKey($"{coords.X} {coords.Y}"))
                 {
-                    throw new Exception("Invalid input. Two or more rovers are trying to be deployed on the same cell.");
+                    throw new Exception(Constants.InvalidInputErrorMessage);
                 }
 
                 OccupiedCoordinates.Add($"{coords.X} {coords.Y}", i);

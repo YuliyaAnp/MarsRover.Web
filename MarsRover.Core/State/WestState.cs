@@ -21,12 +21,12 @@ namespace MarsRover.Core.State
         {
             if (roverInstance.Coordinates.X - 1 < Constants.XMin)
             {
-                throw new Exception("Steps are incorrect: rover is sent out of grid!");
+                throw new Exception(Constants.OutOfGridErrorMessage);
             }
 
             if (roverInstance.OccupiedCoordinates.ContainsKey($"{roverInstance.Coordinates.X - 1} {roverInstance.Coordinates.Y}"))
             {
-                throw new Exception("The cell is occupied by another rover! Select another route.");
+                throw new Exception(Constants.CellIsOccupiedErrorMessage);
             }
 
             roverInstance.Coordinates.X = roverInstance.Coordinates.X - 1;

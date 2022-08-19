@@ -7,7 +7,7 @@ namespace MarsRover.UnitTests
     public class MarsRoverServiceShould
     {
         [Theory]
-        [InlineData("Input\\oneRover.csv", "Output\\oneRover.csv")] //rover crosses its own route
+        [InlineData("Input\\oneRover.csv", "Output\\oneRover.csv")]
         [InlineData("Input\\multipleRovers.csv", "Output\\multipleRovers.csv")]
         public void ReturnCorrectCoordinates_WhenValidSteps(string inputFileName, string outputFileName)
         {
@@ -48,8 +48,8 @@ namespace MarsRover.UnitTests
         }
 
         [Theory]
-        [InlineData("Input\\roversCross1.csv", "Output\\roversCross1.csv")] // second Rover crosses the final point of the first one
-        [InlineData("Input\\roversCross2.csv", "Output\\roversCross2.csv")] // first Rover crosses the starting point of the second one
+        [InlineData("Input\\roversCross-secondCrossesFirst.csv", "Output\\roversCross-secondCrossesFirst.csv")] 
+        [InlineData("Input\\roversCross-firstCrossesSecond.csv", "Output\\roversCross-firstCrossesSecond.csv")]
         public void StopOnTheCurrentCellOfTheGrid_WhenCrossWithOtherRover(string inputFileName, string outputFileName)
         {
             var marsRoverService = new MarsRoverService();
