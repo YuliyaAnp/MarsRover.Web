@@ -1,7 +1,7 @@
 ﻿using MarsRover.Core.Models;
 using MarsRover.Core.State;
 
-namespace MarsRover.Core
+namespace MarsRover.Core.Services
 {
     internal class MarsRoverInstance
     {
@@ -10,7 +10,7 @@ namespace MarsRover.Core
 
         public Dictionary<string, int> OccupiedCoordinates;
 
-        private readonly Dictionary<char, BaseState> initialStates = new() 
+        private readonly Dictionary<char, BaseState> initialStates = new()
         {
             { (char)Direction.North, new NorthState() },
             { (char)Direction.West, new WestState() },
